@@ -14,12 +14,12 @@ void rotateArray(int arr[], int rotation, int size){
   int index = 0;
 
   for(int i = size - finalShift; i < size; i++){
-    temp[index] = arr[size];
+    temp[index] = arr[i];
     index++;
   }
 
   /* step-2: shift elements from the main array */
-  for(int i = n-1; i >= 0; i--){
+  for(int i = size-1; i >= 0; i--){
     if(finalShift >=0){
       arr[i] = arr[i - finalShift];
     }
@@ -44,7 +44,7 @@ int main(){
     }
 
     cout<<"=========== After rotation of " << shift << " elements: ==========="<<endl;
-    rotate_arr(arr, size, shift);
+    rotateArray(arr, size, shift);
     for(int i=0; i<size; i++){
         cout<<arr[i]<<" "<<endl;
     }
